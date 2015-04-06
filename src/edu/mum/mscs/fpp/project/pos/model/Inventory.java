@@ -6,14 +6,29 @@ public class Inventory {
 	private String prdName;
 	private int groupId;
 	private int quantity;
+	private String DisplayName;
 	
-	public Inventory(int prdId, String prdName, int groupId, int quantity) {
+	
+	public Inventory(int prdId, String prdName, int groupId, int quantity,
+			String displayName) {
 		super();
 		this.prdId = prdId;
 		this.prdName = prdName;
 		this.groupId = groupId;
 		this.quantity = quantity;
+		DisplayName = displayName;
 	}
+
+
+	public String getDisplayName() {
+		return DisplayName;
+	}
+
+
+	public void setDisplayName(String displayName) {
+		DisplayName = displayName;
+	}
+
 
 	public int getPrdId() {
 		return prdId;

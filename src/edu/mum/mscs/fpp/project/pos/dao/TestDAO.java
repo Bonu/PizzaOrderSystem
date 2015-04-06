@@ -6,18 +6,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import edu.mum.mscs.fpp.project.pos.model.Inventory;
+public class TestDAO {
 
-public class InventoryfDAO {
-		static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-		static final String DB_URL = "jdbc:mysql://localhost/world";
+	// JDBC driver name and database URL
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	static final String DB_URL = "jdbc:mysql://localhost/world";
 
-		// Database credentials
-		static final String USER = "root";
-		static final String PASS = "admin";
-	
-	public Inventory[] getAllInventory(){
-		Inventory[]  inv = new Inventory[15];
+	// Database credentials
+	static final String USER = "root";
+	static final String PASS = "admin";
+
+	public static void main(String[] args) {
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -35,7 +34,6 @@ public class InventoryfDAO {
 			sql = "SELECT * from world.inventory";
 			ResultSet rs = stmt.executeQuery(sql);
 
-			int i = 0;
 			// STEP 5: Extract data from result set
 			while (rs.next()) {
 				// Retrieve by column name
@@ -43,10 +41,13 @@ public class InventoryfDAO {
 				String prdName = rs.getString("prdName");
 				int groupId = rs.getInt("groupId");
 				int quantity = rs.getInt("quantity");
-				String displayName = rs.getString("DisplayName");
+				String DisplayName = rs.getString("DisplayName");
 
-				inv[0] = new Inventory(id,prdName,groupId,quantity,displayName);
-				i++;
+				// Display values
+				System.out.print("ID: " + id);
+				System.out.print(", Age: " + prdName);
+				System.out.print(", First: " + groupId);
+				System.out.println(", Last: " + DisplayName);
 			}
 			// STEP 6: Clean-up environment
 			rs.close();
@@ -72,9 +73,6 @@ public class InventoryfDAO {
 				se.printStackTrace();
 			}// end finally try
 		}// end try
-		return inv;
-	}
-
-}
-
-
+		System.out.println("Goodbye!");
+	}// end main
+}// end FirstExample
