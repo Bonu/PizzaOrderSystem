@@ -11,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
 
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-
 import edu.mum.mscs.fpp.project.pos.dao.TestDAO;
 
 import javax.swing.JTable;
