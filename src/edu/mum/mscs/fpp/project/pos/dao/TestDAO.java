@@ -8,15 +8,7 @@ import java.sql.Statement;
 
 public class TestDAO {
 
-	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost/world";
-
-	// Database credentials
-	static final String USER = "root";
-	static final String PASS = "admin";
-
-	public static void main(String[] args) {
+	public TestDAO() {
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -74,5 +66,16 @@ public class TestDAO {
 			}// end finally try
 		}// end try
 		System.out.println("Goodbye!");
+	}
+
+	// JDBC driver name and database URL
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	static final String DB_URL = "jdbc:mysql://cs_labv32-311.cs.mum.edu:3306/world"; // Database
+	// credentials
+	static final String USER = "root";
+	static final String PASS = "admin";
+
+	public static void main(String[] args) {
+		
 	}// end main
 }// end FirstExample
