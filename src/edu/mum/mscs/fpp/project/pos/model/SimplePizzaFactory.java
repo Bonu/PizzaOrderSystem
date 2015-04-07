@@ -8,11 +8,11 @@ public class SimplePizzaFactory {
 		Pizza pizza = null;
 		if (type.equals("rdbtnCheesePizza")) {
 			pizza = new CheesePizza(dough, size, toppings);
-		} else if (type.equals("rdbtnWhiteGarlicSauce")) {
+		} else if (type.equals("rdbtnPepperoniPizza")) {
 			pizza = new PepperoniPizza(dough, size, toppings);
 		} else if (type.equals("rdbtnClamPizza")) {
 			pizza = new ClamPizza(dough, size, toppings);
-		} else if (type.equals("rdbtnMarinaraSauce")) {
+		} else if (type.equals("rdbtnVeggiePizza")) {
 			pizza = new VeggiePizza(dough, size, toppings);
 		}
 		return pizza;
