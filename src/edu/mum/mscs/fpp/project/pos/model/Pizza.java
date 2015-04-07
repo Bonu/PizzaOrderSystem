@@ -12,8 +12,11 @@ public abstract class Pizza {
 	String prepare() {
 		String str = "";
 		str = str + "Preparing " + name;
+		str = str + "\n";
 		str = str + "Tossing dough...";
+		str = str + "\n";
 		str = str + "Adding sauce...";
+		str = str + "\n";
 		str = str + "Adding toppings: ";
 		for (int i = 0; i < toppings.size(); i++) {
 			str = str + "   " + toppings.get(i);

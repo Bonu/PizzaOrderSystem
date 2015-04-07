@@ -18,8 +18,11 @@ public class PizzaStore {
 		pizza = factory.createPizza(type, dough, size, toppings );
  
 		str += pizza.prepare();
+		str = str + "\n";
 		str += pizza.bake();
+		str = str + "\n";
 		str += pizza.cut();
+		str = str + "\n";
 		str += pizza.box();
 		try {
 			ReadyToEat mp = new ReadyToEat(str);
