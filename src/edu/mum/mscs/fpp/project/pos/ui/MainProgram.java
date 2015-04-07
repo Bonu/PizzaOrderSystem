@@ -84,7 +84,7 @@ public class MainProgram extends JFrame {
 		JButton btnPizzaOrder = new JButton("Pizza Order");
 		btnPizzaOrder.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PizzaOrder po = new PizzaOrder();
+				PizzaOrderUI po = new PizzaOrderUI();
 				po.setVisible(true);
 				contentPane.setVisible(false);
 				dispose();

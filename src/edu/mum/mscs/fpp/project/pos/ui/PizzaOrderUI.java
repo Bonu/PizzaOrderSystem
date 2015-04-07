@@ -21,7 +21,11 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class PizzaOrder extends JFrame {
+import edu.mum.mscs.fpp.project.pos.model.Pizza;
+import edu.mum.mscs.fpp.project.pos.model.PizzaStore;
+import edu.mum.mscs.fpp.project.pos.model.SimplePizzaFactory;
+
+public class PizzaOrderUI extends JFrame {
 
 	private JPanel contentPane;
 
@@ -32,7 +36,7 @@ public class PizzaOrder extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PizzaOrder frame = new PizzaOrder();
+					PizzaOrderUI frame = new PizzaOrderUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +48,7 @@ public class PizzaOrder extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PizzaOrder() {
+	public PizzaOrderUI() {
 		final ArrayList<String> toppings = new ArrayList<String>();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 668, 461);
@@ -280,14 +284,16 @@ public class PizzaOrder extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				String Sause = ((JToggleButton.ToggleButtonModel) bgSauce
 						.getSelection()).getActionCommand();
-				System.out.println(Sause);
 				String Size = ((JToggleButton.ToggleButtonModel) bgSize
 						.getSelection()).getActionCommand();
-				System.out.println(Size);
 				String Thin = ((JToggleButton.ToggleButtonModel) bgThin
 						.getSelection()).getActionCommand();
-				System.out.println(Thin);
-				System.out.println(toppings);
+				SimplePizzaFactory factory = new SimplePizzaFactory();
+				PizzaStore store = new PizzaStore(factory);
+
+//				Pizza pizza = store.orderPizza("cheese", "pepperoni", "clam", "veggie");
+				Pizza pizza = store.orderPizza(Sause, Thin, Size, toppings);
+				
 
 			}
 		});
