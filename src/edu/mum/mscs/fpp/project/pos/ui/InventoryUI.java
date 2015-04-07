@@ -17,6 +17,8 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class InventoryUI extends JFrame {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -33,14 +35,15 @@ public class InventoryUI extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				program pr = new program();
+				MainProgram mp = new MainProgram();
+				mp.setVisible(true);
 				
 			}
 		});
 		setTitle("Inventory");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 903, 322);
+		setBounds(100, 100, 903, 360);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -123,7 +126,7 @@ public class InventoryUI extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(UIManager.getBorder("CheckBox.border"));
-		panel.setBounds(10, 11, 867, 269);
+		panel.setBounds(10, 41, 867, 269);
 		contentPane.add(panel);
 		panel.setLayout(null);
 						
@@ -132,6 +135,19 @@ public class InventoryUI extends JFrame {
 								JScrollPane scrollPane = new JScrollPane(table);
 								scrollPane.setBounds(10, 11, 847, 247);
 								panel.add(scrollPane);
+								
+								JButton btnGoBackTo = new JButton("Go Back to The Main");
+								btnGoBackTo.addMouseListener(new MouseAdapter() {
+									@Override
+									public void mouseClicked(MouseEvent e) {
+										contentPane.setVisible(false);
+										dispose();
+										MainProgram mp = new MainProgram();
+										mp.setVisible(true);
+									}
+								});
+								btnGoBackTo.setBounds(41, 7, 307, 23);
+								contentPane.add(btnGoBackTo);
 	}
 
 	/**
