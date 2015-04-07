@@ -9,15 +9,15 @@ import java.sql.Statement;
 import edu.mum.mscs.fpp.project.pos.model.Inventory;
 
 public class InventoryfDAO {
-		static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-		static final String DB_URL = "jdbc:mysql://localhost/world";
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	static final String DB_URL = "jdbc:mysql://localhost/world";
 
-		// Database credentials
-		static final String USER = "root";
-		static final String PASS = "admin";
-	
-	public Inventory[] getAllInventory(){
-		Inventory[]  inv = new Inventory[15];
+	// Database credentials
+	static final String USER = "root";
+	static final String PASS = "root";
+
+	public Inventory[] getAllInventory() {
+		Inventory[] inv = new Inventory[15];
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -45,7 +45,8 @@ public class InventoryfDAO {
 				int quantity = rs.getInt("quantity");
 				String displayName = rs.getString("DisplayName");
 
-				inv[0] = new Inventory(id,prdName,groupId,quantity,displayName);
+				inv[i] = new Inventory(id, prdName, groupId, quantity,
+						displayName);
 				i++;
 			}
 			// STEP 6: Clean-up environment
@@ -76,5 +77,3 @@ public class InventoryfDAO {
 	}
 
 }
-
-

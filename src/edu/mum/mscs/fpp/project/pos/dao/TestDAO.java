@@ -27,6 +27,7 @@ public class TestDAO {
 			ResultSet rs = stmt.executeQuery(sql);
 
 			// STEP 5: Extract data from result set
+			int i = 0;
 			while (rs.next()) {
 				// Retrieve by column name
 				int id = rs.getInt("prdId");
@@ -34,7 +35,6 @@ public class TestDAO {
 				int groupId = rs.getInt("groupId");
 				int quantity = rs.getInt("quantity");
 				String DisplayName = rs.getString("DisplayName");
-
 				// Display values
 				System.out.print("ID: " + id);
 				System.out.print(", Age: " + prdName);
@@ -70,12 +70,12 @@ public class TestDAO {
 
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://cs_labv32-311.cs.mum.edu:3306/world"; // Database
+	static final String DB_URL = "jdbc:mysql://localhost/world"; // Database
 	// credentials
 	static final String USER = "root";
-	static final String PASS = "admin";
+	static final String PASS = "root";
 
 	public static void main(String[] args) {
-		
+
 	}// end main
 }// end FirstExample
