@@ -293,6 +293,8 @@ public class PizzaOrderUI extends JFrame {
 
 //				Pizza pizza = store.orderPizza("cheese", "pepperoni", "clam", "veggie");
 				Pizza pizza = store.orderPizza(Sause, Thin, Size, toppings);
+				contentPane.setVisible(false);
+				dispose();
 				
 
 			}

@@ -47,22 +47,17 @@ public class ReadyToEat extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(166, 70, 46, 14);
-		contentPane.add(lblNewLabel);
-
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(303, 82, 46, 14);
-		contentPane.add(lblNewLabel_1);
-
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(215, 286, 46, 14);
-		contentPane.add(lblNewLabel_2);
-
-		BufferedImage myPicture = ImageIO.read(new File("/redball.png"));
+		System.out.println(s);
+		BufferedImage myPicture = ImageIO.read(new File("redball.png"));
 		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-		picLabel.setBounds(215, 286, 46, 14);
+		picLabel.setBounds(113, 11, 290, 299);
 		contentPane.add(picLabel);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(113, 340, 290, 81);
+		contentPane.add(lblNewLabel);
+		lblNewLabel.setText(s);
+		contentPane.setVisible(true);
 	}
 
 }
