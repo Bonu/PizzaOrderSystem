@@ -25,7 +25,8 @@ public class PizzaStore {
 		str = str + "\n";
 		str += pizza.box();
 		try {
-			ReadyToEat mp = new ReadyToEat(str);
+			ReadyToEat frame = new ReadyToEat(str);
+			frame.setVisible(true);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

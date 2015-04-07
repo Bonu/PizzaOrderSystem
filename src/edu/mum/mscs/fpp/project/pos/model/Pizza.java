@@ -19,7 +19,7 @@ public abstract class Pizza {
 		str = str + "\n";
 		str = str + "Adding toppings: ";
 		for (int i = 0; i < toppings.size(); i++) {
-			str = str + toppings.get(i);
+			str = str + "\n" + toppings.get(i);
 		}
 		return str;
 	}

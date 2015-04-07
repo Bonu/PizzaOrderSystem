@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class ReadyToEat extends JFrame {
 
@@ -21,16 +22,6 @@ public class ReadyToEat extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ReadyToEat frame = new ReadyToEat("");
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
 	}
 
 	/**
@@ -41,7 +32,7 @@ public class ReadyToEat extends JFrame {
 	public ReadyToEat(String s) throws IOException {
 		setTitle("Verify Your Order");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 580, 535);
+		setBounds(100, 100, 580, 676);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -53,11 +44,11 @@ public class ReadyToEat extends JFrame {
 		picLabel.setBounds(113, 11, 290, 299);
 		contentPane.add(picLabel);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(113, 340, 290, 81);
-		contentPane.add(lblNewLabel);
-		lblNewLabel.setText(s);
+		JTextArea textArea = new JTextArea();
+		textArea.setEditable(false);
+		textArea.setBounds(121, 335, 314, 280);
+		textArea.setText(s);
+		contentPane.add(textArea);
 		contentPane.setVisible(true);
 	}
-
 }
