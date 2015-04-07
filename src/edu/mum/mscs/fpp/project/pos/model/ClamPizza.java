@@ -1,11 +1,13 @@
 package edu.mum.mscs.fpp.project.pos.model;
 
+import java.util.ArrayList;
+
 public class ClamPizza extends Pizza {
-	public ClamPizza() {
+	public ClamPizza(String dough, String size, ArrayList toppings) {
+		this.dough = dough;
+		this.size = size;
+		this.toppings = toppings;
 		name = "Clam Pizza";
-		dough = "Thin crust";
 		sauce = "White garlic sauce";
-		toppings.add("Clams");
-		toppings.add("Grated parmesan cheese");
 	}
 }
